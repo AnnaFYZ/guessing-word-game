@@ -1,5 +1,5 @@
 import './App.css';
-import Timer from './components/timer';
+import Timer from './timer';
 import Input from './components/input-component';
 
 function App() {
