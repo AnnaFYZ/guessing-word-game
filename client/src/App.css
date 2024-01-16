@@ -1,0 +1,19 @@
+:root {
+  --whiteColor: #FFF;
+  --greyBackground: rgba(217, 217, 217, 0.54);
+}
+
+.input {
+  width: 298px;
+  height: 78px;
+  flex-shrink: 0;
+  border-radius: 7px;
+  border: 2px solid var(--whiteColor);
+  background: var(--greyBackground);
+  color: var(--whiteColor);
+  font-family: Khand;
+font-size: 48px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
