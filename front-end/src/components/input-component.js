@@ -1,4 +1,4 @@
-// import "./App.css";
+import "../App.css";
 import {useState} from 'react';
 
 
@@ -9,8 +9,8 @@ function Input({action}) {
   };
 
   return (
-    <div className="input">
-      <input
+    <div className="">
+      <input className="input"
         type="text"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}

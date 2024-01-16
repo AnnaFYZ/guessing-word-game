@@ -11,4 +11,9 @@
   border: 2px solid var(--whiteColor);
   background: var(--greyBackground);
   color: var(--whiteColor);
+  font-family: Khand;
+font-size: 48px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
 }

@@ -12,12 +12,16 @@ function App() {
 
   return (
     <div className="App">
-      <Box sx={{
-        width: "100%", height: "100vh", backgroundImage: 'linear-gradient(to bottom right, #720E7A, #0F1A37)'
-      }}>
-
-        <Input />
+      <Box
+        sx={{
+          width: "100%",
+          height: "100vh",
+          backgroundImage: "linear-gradient(to bottom right, #720E7A, #0F1A37)",
+        }}
+      >
         <Timer />
+        <Card letterState={"guessed"} />
+        <Input />
         <Card letterState={letterState} />
       </Box>
     </div>
