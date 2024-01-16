@@ -4,6 +4,7 @@ import Input from './components/input-component';
 import Card from './components/card';
 import { Box } from '@mui/system';
 import { useState } from "react";
+import MyButton from './components/button';
 
 
 function App() {
@@ -19,6 +20,10 @@ function App() {
         <Input />
         <Timer />
         <Card letterState={letterState} />
+        <MyButton buttonText="Confirm" color="yellow" />
+        <MyButton buttonText="Start New Game" color="gradient" />
+        <MyButton buttonText="Join the game" color="gradient" />
+
       </Box>
     </div>
   );
