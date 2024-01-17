@@ -1,4 +1,5 @@
 import './App.css';
+
 import { Box } from '@mui/system';
 import { useState } from "react";
 import DummyWordHolder from './components/dummyWordHolder';
@@ -19,10 +20,12 @@ function App() {
           sx={{
             width: "100%",
             height: "100vh",
+
             backgroundImage: "linear-gradient(to bottom right, #720E7A, #0F1A37)",
           }}
         >
           <DummyWordHolder letterState={letterState} setLetterState={setLetterState} />
+
         </Box>
       </Router>
     </div>
