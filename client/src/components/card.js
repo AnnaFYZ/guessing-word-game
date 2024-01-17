@@ -1,4 +1,5 @@
 import { Grid, Typography, Box } from "@mui/material";
+import { useState } from "react";
 import randomWords from "../mockData";
 
 const randomWord = (words) => {
@@ -7,6 +8,8 @@ const randomWord = (words) => {
     let lettersArray = randomWord.split("").map((char) => char.toUpperCase());
     return lettersArray;
 }
+
+
 
 const LetterCard = ({ letterState }) => {
     //the states for letterState (pending, guessed, wrong)

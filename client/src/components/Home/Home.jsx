@@ -4,6 +4,9 @@ import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import MyButton from "../button"
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 
 function Home() {
@@ -57,6 +60,7 @@ function Home() {
           </Box>
         </Box>
       </Box>
+
     </div>
   );
 }

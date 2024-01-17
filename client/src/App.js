@@ -1,9 +1,9 @@
 import './App.css';
-
+import { BrowserRouter as Router } from "react-router-dom";
 import { Box } from '@mui/system';
 import { useState } from "react";
 import DummyWordHolder from './components/dummyWordHolder';
-import { BrowserRouter as Router } from "react-router-dom";
+import DummyInputHolder from './components/dummyInputHolder';
 import Home from "./components/Home/Home"
 import HolderForWrongLetters from './components/dummyWrongWords';
 
@@ -26,11 +26,14 @@ function App() {
         >
           <DummyWordHolder letterState={letterState} setLetterState={setLetterState} />
           <HolderForWrongLetters letterState={letterState} />
+          <DummyInputHolder />
+
         </Box>
       </Router>
     </div>
   );
 }
+
 
 
 export default App;
