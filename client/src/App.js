@@ -1,4 +1,5 @@
 import './App.css';
+
 import { Box } from '@mui/system';
 import { useState } from "react";
 import DummyWordHolder from './components/dummyWordHolder';

@@ -1,7 +1,6 @@
 import { Grid, Typography, Box } from "@mui/material";
 import randomWords from "../mockData";
 
-
 const randomWord = (words) => {
     const randomIndex = Math.floor(Math.random() * words.length);
     let randomWord = words[randomIndex].word;
@@ -14,7 +13,7 @@ const LetterCard = ({ letterState }) => {
 
     return (
         <div style={{ display: "flex", flexDirection: 'row' }}>
-            {randomWord(randomWords).map((letter, key) => (
+            {randomWord.map((letter, key) => (
                 <Grid
                     container
                     alignItems="flex-end"
