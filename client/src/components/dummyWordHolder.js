@@ -9,6 +9,7 @@ const DummyWordHolder = ({ letterState, setLetterState }) => {
             <Box sx={{
                 display: "inline-block",
                 minWidth: "30rem",
+                mb: "2rem"
             }}>
                 <Grid container justifyContent="space-between" alignItems="center" mb="1.5rem" >
                     <Grid item >
