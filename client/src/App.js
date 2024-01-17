@@ -4,6 +4,8 @@ import { Box } from '@mui/system';
 import { useState } from "react";
 import DummyWordHolder from './components/dummyWordHolder';
 import DummyInputHolder from './components/dummyInputHolder';
+import Home from "./components/Home/Home"
+
 
 
 function App() {
@@ -23,6 +25,7 @@ function App() {
         >
           <DummyWordHolder letterState={letterState} setLetterState={setLetterState} />
           <DummyInputHolder />
+
         </Box>
       </Router>
     </div>
