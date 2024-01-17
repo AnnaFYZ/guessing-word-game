@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import MyButton from '../button';
@@ -7,9 +8,11 @@ import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 
+
 function Home() {
   return (
     <div>
+
       <Box
         sx={{
           display: 'flex',
@@ -58,6 +61,7 @@ function Home() {
           </Box>
         </Box>
       </Box>
+
     </div>
   );
 }
