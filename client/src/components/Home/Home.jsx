@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import MyButton from '../button';
 
 function Home() {
   return (
@@ -12,12 +13,12 @@ function Home() {
 
 
       <Link to="/start-new-game">
-        <button>Start New Game</button>
+        <MyButton buttonText="Start New Game" color="gradient" />
       </Link>
 
 
       <Link to="/join-game">
-        <button>Join Game</button>
+        <MyButton buttonText="Join the game" color="gradient" />
       </Link>
 
 
