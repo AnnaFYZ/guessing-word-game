@@ -23,7 +23,6 @@ function App() {
             backgroundImage: "linear-gradient(to bottom right, #720E7A, #0F1A37)",
           }}
         >
-          <Input />
           <DummyWordHolder letterState={letterState} setLetterState={setLetterState} />
         </Box>
       </Router>
