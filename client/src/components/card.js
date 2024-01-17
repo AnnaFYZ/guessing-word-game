@@ -1,14 +1,23 @@
 import { Grid, Typography, Box } from "@mui/material";
 import { useState } from "react";
+import randomWords from "../mockData";
 
-const randomWord = ["A", "W", "E", "S", "O", "M", "E"];
+const randomWord = (words) => {
+    const randomIndex = Math.floor(Math.random() * words.length);
+    let randomWord = words[randomIndex].word;
+    let lettersArray = randomWord.split("").map((char) => char.toUpperCase());
+    return lettersArray;
+}
 
-const Card = ({ letterState }) => {
+
+
+const LetterCard = ({ letterState }) => {
     //the states for letterState (pending, guessed, wrong)
+    const lettersArray = randomWord(randomWords);
 
     return (
         <div style={{ display: "flex", flexDirection: 'row' }}>
-            {randomWord.map((letter, key) => (
+            {lettersArray.map((letter, key) => (
                 <Grid
                     container
                     alignItems="flex-end"
@@ -62,4 +71,4 @@ const Card = ({ letterState }) => {
     );
 };
 
-export default Card;
+export default LetterCard;

@@ -27,8 +27,6 @@ const DummyWordHolder = ({ letterState, setLetterState }) => {
                     </Grid>
                     <Timer />
                 </Grid>
-
-
                 <LetterCard letterState={letterState} />
             </Box>
         </div>
