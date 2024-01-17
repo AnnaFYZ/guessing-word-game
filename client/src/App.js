@@ -5,6 +5,7 @@ import Card from './components/card';
 import { Box } from '@mui/system';
 import { useState } from "react";
 import DummyWordHolder from './components/dummyWordHolder';
+import DummyInputHolder from './components/dummyInputHolder';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       >
         <Input />
         <DummyWordHolder letterState={letterState} setLetterState={setLetterState} />
+        <DummyInputHolder />
       </Box>
     </div>
   );
