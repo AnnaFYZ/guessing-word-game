@@ -10,10 +10,11 @@ const randomWord = (words) => {
 
 const LetterCard = ({ letterState }) => {
     //the states for letterState (pending, guessed, wrong)
+    const lettersArray = randomWord(randomWords);
 
     return (
         <div style={{ display: "flex", flexDirection: 'row' }}>
-            {randomWord.map((letter, key) => (
+            {lettersArray.map((letter, key) => (
                 <Grid
                     container
                     alignItems="flex-end"
