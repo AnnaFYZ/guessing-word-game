@@ -4,11 +4,12 @@ import Input from './components/input-component';
 import Card from './components/card';
 import { Box } from '@mui/system';
 import { useState } from "react";
+import DummyWordHolder from './components/dummyWordHolder';
 
 
 function App() {
   //the states for letterState (pending, guessed, wrong)
-  const [letterState, setLetterState] = useState("wrong");
+  const [letterState, setLetterState] = useState("pending");
 
   return (
     <div className="App">
@@ -19,10 +20,8 @@ function App() {
           backgroundImage: "linear-gradient(to bottom right, #720E7A, #0F1A37)",
         }}
       >
-        <Timer />
-        <Card letterState={"guessed"} />
         <Input />
-        <Card letterState={letterState} />
+        <DummyWordHolder letterState={letterState} setLetterState={setLetterState} />
       </Box>
     </div>
   );

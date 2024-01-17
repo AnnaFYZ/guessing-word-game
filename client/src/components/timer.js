@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react"
+import { Box, Typography } from "@mui/material"
+import React from 'react';
+
 
 const Timer = () => {
     const [countDown, setCountDown] = useState(0)
@@ -32,11 +35,17 @@ const Timer = () => {
 
 
     return (
-        <div className="timer">
-            <div>
-                Time: {minutes}:{seconds}
-            </div>
-        </div>
+        <Box mr="0.5rem">
+            <Typography sx={{
+                fontFamily: "Keania One",
+                fontWeight: 400,
+                fontSize: "30pt",
+                fontStyle: "normal",
+                color: "#FFC700"
+            }}>
+                {minutes}:{seconds}
+            </Typography>
+        </Box>
     );
 
 }
