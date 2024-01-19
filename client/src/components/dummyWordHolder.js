@@ -3,7 +3,7 @@ import LetterCard from "./card"
 import Timer from "./timer.js"
 import Title from "./title"
 
-const DummyWordHolder = ({ letterState, setLetterState }) => {
+const DummyWordHolder = ({ letterState, runTimer, setRunTimer }) => {
     return (
         <div>
             <Box sx={{
@@ -25,9 +25,9 @@ const DummyWordHolder = ({ letterState, setLetterState }) => {
                             <Title title="tries left to guess" fontSize="20pt" />
                         </Grid>
                     </Grid>
-                    <Timer />
+                    <Timer runTimer={runTimer} setRunTimer={setRunTimer} />
                 </Grid>
-                <LetterCard letterState={letterState} />
+                <LetterCard letterState="pending" />
             </Box>
         </div>
     )

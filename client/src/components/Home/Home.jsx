@@ -8,7 +8,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from "./../../assets/logo3.png"
 
-function Home() {
+function Home({ setRunTimer, runTimer, letterState, setLetterState }) {
+  const handleStart = () => {
+    console.log("handleStart called");
+    setLetterState("pending")
+    setRunTimer(true)
+    console.log("runTimer", runTimer)
+  }
   return (
     <div>
       <Box
@@ -48,16 +54,16 @@ function Home() {
             </Typography>
           </Box>
         </Grid>
-        <Grid container justifyContent="center" lg={12}>
+        <Grid container justifyContent="center" >
           <Grid item lg={8} mt="2rem" >
             <Typography sx={{ fontSize: { lg: "16pt", xs: "12pt" } }} textAlign="center">
               Welcome to <span style={{ color: "#FFC700" }}>Word Fever</span>, where words come to life! Unleash your creativity, challenge your friends, and dive into a world of linguistic excitement. Start a new game or join the fun now!
             </Typography>
           </Grid>
-          <Grid item lg={8} sx={{ mt: { lg: "-4rem", xs: "5rem" } }} >
+          <Grid item lg={8} sx={{ mt: { xs: "5rem" } }} >
             <Grid container justifyContent="center" gap="1rem">
               <Link to="/start-new-game">
-                <MyButton buttonText="Start New Game" color="gradient" />
+                <MyButton buttonText="Start New Game" color="gradient" onClick={handleStart} />
               </Link>
               <Link to="/join-game">
                 <MyButton buttonText="Join the game" color="gradient" />
