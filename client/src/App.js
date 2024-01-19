@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Home from "./components/Home/Home";
 import GamePage from "./components/Game page/GamePage";
+import Contacts from "./components/Contacts/Contacts";
 
 
 function App() {
@@ -20,10 +21,12 @@ function App() {
             path="/start-new-game"
             element={<GamePage lettersArray={lettersArray} runTimer={runTimer} letterState={letterState} setLetterState={setLetterState} setRunTimer={setRunTimer} setRightLetters={setRightLetters} setWrongLetters={setWrongLetters} wrongLetters={wrongLetters} rightLetters={rightLetters} />}
           />
-          <Route path="/" element={<Home setLettersArray={setLettersArray} setRightLetters={setRightLetters} setWrongLetters={setWrongLetters} letterState={letterState} setLetterState={setLetterState} runTimer={runTimer} setRunTimer={setRunTimer} />} />
 
+          <Route path="/" element={<Home setLettersArray={setLettersArray} setRightLetters={setRightLetters} setWrongLetters={setWrongLetters} letterState={letterState} setLetterState={setLetterState} runTimer={runTimer} setRunTimer={setRunTimer} />} />
+          <Route path="/contacts" element={<Contacts />}></Route>
         </Routes>
       </Router>
+
     </div>
   );
 }
