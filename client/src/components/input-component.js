@@ -1,19 +1,22 @@
-import "../App.css";
-import {useState} from 'react';
+import React from 'react';
 
+function Input({ action, inputValue, setInputValue, onInputChange }) {
+  const handleChange = (e) => {
+    setInputValue(e.target.value.toUpperCase());
+    onInputChange(e.target.value);
+  };
 
-function Input({action}) {
-  const [inputValue, setInputValue] = useState("");
   if (action) {
     action(inputValue);
-  };
+  }
 
   return (
     <div className="">
-      <input className="input"
+      <input
+        className="input"
         type="text"
         value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
+        onChange={handleChange}
       />
     </div>
   );

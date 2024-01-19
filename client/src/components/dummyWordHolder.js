@@ -3,7 +3,9 @@ import LetterCard from "./card"
 import Timer from "./timer.js"
 import Title from "./title"
 
-const DummyWordHolder = ({ letterState, runTimer, setRunTimer }) => {
+const DummyWordHolder = ({ letterState, runTimer, setRunTimer, lettersArray, rightLetters }) => {
+    console.log("lettersArray", lettersArray)
+    console.log("lettersArray", letterState)
     return (
         <div>
             <Box sx={{
@@ -27,7 +29,26 @@ const DummyWordHolder = ({ letterState, runTimer, setRunTimer }) => {
                     </Grid>
                     <Timer runTimer={runTimer} setRunTimer={setRunTimer} />
                 </Grid>
-                <LetterCard letterState="pending" />
+                <div style={{ display: "flex", flexDirection: 'row' }}>
+                    {lettersArray.map((letter, index) => (
+                        <Grid
+                            container
+                            alignItems="flex-end"
+                            key={index}
+                            sx={{
+                                width: "4rem",
+                                height: "5.3rem",
+                                marginRight: "0.6rem",
+                            }}
+                        >
+                            <LetterCard
+                                letter={letter}
+                                letterState={rightLetters.includes(letter) ? "guessed" : "pending"}
+                            />
+                        </Grid>
+                    ))}
+                </div>
+
             </Box>
         </div>
     )

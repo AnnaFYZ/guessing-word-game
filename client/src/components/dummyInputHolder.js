@@ -1,10 +1,29 @@
+import React, { useState } from 'react';
 import MyButton from "./button";
 import Subtitle from "./subtitle";
 import Input from "./input-component";
 import { Box, Grid } from "@mui/material";
 
-const DummyInputHolder = () => {
-  const handleConfirm = () => {};
+const DummyInputHolder = ({ lettersArray, setWrongLetters, wrongLetters, rightLetters, setRightLetters }) => {
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInputChange = (value) => {
+  };
+
+  const handleConfirm = () => {
+    console.log("Input Value:", inputValue);
+    const newWrongLetters = !lettersArray.includes(inputValue)
+      ? [...wrongLetters, inputValue]
+      : wrongLetters;
+
+    const newRightLetters = lettersArray.includes(inputValue)
+      ? [...rightLetters, inputValue]
+      : rightLetters;
+
+    setWrongLetters(newWrongLetters);
+    setRightLetters(newRightLetters);
+  };
+
   return (
     <div>
       <Box
@@ -20,13 +39,17 @@ const DummyInputHolder = () => {
         />
         <Grid container justifyContent="left" alignItems="center">
           <Grid item>
-            <Input action={handleConfirm} />
+            <Input
+              inputValue={inputValue}
+              setInputValue={setInputValue}
+              onInputChange={handleInputChange}
+            />
           </Grid>
           <Grid item>
             <MyButton
               buttonText="Confirm"
               color="yellow"
-              onClick={() => handleConfirm()}
+              onClick={handleConfirm}
             />
           </Grid>
         </Grid>
