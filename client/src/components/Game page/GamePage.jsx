@@ -1,13 +1,16 @@
 import React from "react";
-import { useState } from "react";
 import { Box, Grid } from "@mui/material";
 import DummyInputHolder from "../dummyInputHolder";
 import DummyWordHolder from "../dummyWordHolder";
 import HolderForWrongLetters from "../dummyWrongWords";
 
-function GamePage({ runTimer, setRunTimer, letterState, setLetterState }) {
 
-  const [wrongLetters, setWrongLetters] = useState([])
+function GamePage({ runTimer, setRunTimer, letterState, setLetterState, wrongLetters, rightLetters, setWrongLetters, setRightLetters, lettersArray }) {
+
+
+  console.log("lettersArray", lettersArray)
+  console.log("wrongLetters", wrongLetters)
+  console.log("rightLetters", rightLetters)
 
   return (
     <Box
@@ -25,17 +28,19 @@ function GamePage({ runTimer, setRunTimer, letterState, setLetterState }) {
       <Grid container alignItems="left" sx={{ wrap: "nowrap", maxWidth: "50%" }}>
         <Grid item lg={7}>
           <DummyWordHolder
+            lettersArray={lettersArray}
             runTimer={runTimer}
             setRunTimer={setRunTimer}
             letterState={letterState}
             setLetterState={setLetterState}
+            rightLetters={rightLetters}
           />
         </Grid>
         <Grid item lg={7}>
-          <DummyInputHolder />
+          <DummyInputHolder lettersArray={lettersArray} setWrongLetters={setWrongLetters} wrongLetters={wrongLetters} rightLetters={rightLetters} setRightLetters={setRightLetters} />
         </Grid>
         <Grid item lg={7}>
-          <HolderForWrongLetters letterState={letterState} />
+          <HolderForWrongLetters letterState={letterState} wrongLetters={wrongLetters} />
         </Grid>
       </Grid>
     </Box>
