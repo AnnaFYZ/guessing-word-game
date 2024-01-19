@@ -3,10 +3,8 @@ import { Box, Typography } from "@mui/material"
 import React from 'react';
 
 
-const Timer = () => {
+const Timer = ({ runTimer, setRunTimer }) => {
     const [countDown, setCountDown] = useState(0)
-    const [runTimer, setRunTimer] = useState(false);
-
     useEffect(() => {
         let timerId;
 
