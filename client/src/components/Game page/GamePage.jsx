@@ -3,14 +3,18 @@ import { Box, Grid } from "@mui/material";
 import DummyInputHolder from "../dummyInputHolder";
 import DummyWordHolder from "../dummyWordHolder";
 import HolderForWrongLetters from "../dummyWrongWords";
+import randomWords from "../../mockData";
+
+const randomWord = (words) => {
+  const randomIndex = Math.floor(Math.random() * words.length);
+  let randomWord = words[randomIndex];
+  return randomWord;
+};
+
+const guessingWord = randomWord(randomWords).word;
 
 
-function GamePage({ runTimer, setRunTimer, letterState, setLetterState, wrongLetters, rightLetters, setWrongLetters, setRightLetters, lettersArray }) {
-
-
-  console.log("lettersArray", lettersArray)
-  console.log("wrongLetters", wrongLetters)
-  console.log("rightLetters", rightLetters)
+function GamePage({ runTimer, setRunTimer, letterState, setLetterState, wrongLetters, rightLetters, setWrongLetters, setRightLetters}) {
 
   return (
     <Box
@@ -28,7 +32,7 @@ function GamePage({ runTimer, setRunTimer, letterState, setLetterState, wrongLet
       <Grid container alignItems="left" sx={{ wrap: "nowrap", maxWidth: "50%" }}>
         <Grid item lg={7}>
           <DummyWordHolder
-            lettersArray={lettersArray}
+            guessingWord={guessingWord}
             runTimer={runTimer}
             setRunTimer={setRunTimer}
             letterState={letterState}
@@ -37,7 +41,7 @@ function GamePage({ runTimer, setRunTimer, letterState, setLetterState, wrongLet
           />
         </Grid>
         <Grid item lg={7}>
-          <DummyInputHolder lettersArray={lettersArray} setWrongLetters={setWrongLetters} wrongLetters={wrongLetters} rightLetters={rightLetters} setRightLetters={setRightLetters} />
+          <DummyInputHolder guessingWord={guessingWord} setWrongLetters={setWrongLetters} wrongLetters={wrongLetters} rightLetters={rightLetters} setRightLetters={setRightLetters} />
         </Grid>
         <Grid item lg={7}>
           <HolderForWrongLetters letterState={letterState} wrongLetters={wrongLetters} />

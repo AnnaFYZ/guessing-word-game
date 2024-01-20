@@ -7,15 +7,6 @@ import MyButton from "../button"
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from "./../../assets/logo3.png"
-import randomWords from "./../../mockData";
-
-const randomWord = (words) => {
-  const randomIndex = Math.floor(Math.random() * words.length);
-  let randomWord = words[randomIndex].word;
-  let lettersArray = randomWord.split("").map((char) => char.toUpperCase());
-  return lettersArray;
-}
-
 
 
 function Home({ setRunTimer, runTimer, setLettersArray, setLetterState, setRightLetters, setWrongLetters }) {
@@ -25,8 +16,6 @@ function Home({ setRunTimer, runTimer, setLettersArray, setLetterState, setRight
     setRunTimer(true)
     setRightLetters([])
     setWrongLetters([])
-    setLettersArray(randomWord(randomWords))
-    console.log("runTimer", runTimer)
   }
   return (
     <div>

@@ -1,5 +1,5 @@
 
-import { Box, IconButton, FormControl, FormLabel, FormGroup, TextField } from '@mui/material';
+import { Box, IconButton, FormLabel, FormGroup, TextField } from '@mui/material';
 import GitHubIcon from "@mui/icons-material/GitHub";
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
@@ -73,8 +73,9 @@ function Contacts () {
           </div>
           <Box sx={{ m: 2 }} />
           <form
-            method="post"
-            action="console.log(email, message)"
+            // method="post"
+            // action="console.log(email, message)"
+            onSubmit={console.log(message)}
             style={{ width: "fit-content" }}
           >
             <FormLabel
